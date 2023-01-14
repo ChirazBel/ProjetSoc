@@ -28,9 +28,8 @@ private AdherentRepository adherentRepository;
 	
 	@PostMapping("/add")
 	@ResponseStatus(HttpStatus.CREATED)
-	public String addAdherent(@ModelAttribute("adherent")  Adherent adherent) {
+	public void addAdherent(@RequestBody Adherent adherent) {
 		 adherentService.addAdherent(adherent);
-		 return "redirect:/api/adherent";
 	}
 	 @GetMapping("/showNewAdherentForm")
 	 public String showNewAdherentForm(Model model) {
